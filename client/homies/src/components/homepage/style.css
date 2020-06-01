@@ -1,0 +1,37 @@
+input {
+    border: transparent;
+    height: 50px;
+    width: 400px;
+    border-radius: 5px;
+}
+::placeholder {
+    padding: 30px;
+}
+/* .search {
+    background-image: url("Main-Banner.jpg");
+    /* background-size: 1919px 910px; */
+    /* background-repeat: no-repeat;
+    margin-top: -200px;
+    height: 900px;
+    width: 1919px;
+} */ 
+.search-form {
+    width: 50%;
+    margin: 190px 290px;
+}
+
+button {
+    height: 50px;
+    border: transparent;
+    width: 120px;
+    background-color: #2c3792;
+    border-radius: 15px;
+    color: white;
+}
+form {
+    border-collapse: collapse; 
+
+}
+.searchbar-container {
+    padding-top: 80px ;
+}
