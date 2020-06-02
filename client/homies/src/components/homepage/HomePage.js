@@ -1,6 +1,9 @@
 import React, {Component} from "react";
 import './style.css'
-import ServiceCard from "../HomePageCards/HomePageCards";
+// import ServiceCard from "../HomePageCards/HomePageCards";
+import ServicesSection from "../HomePageCards/SecondSection";
+import ThirdSection from "../3rdSection/thirdSection";
+import Section4 from "../4thSection/Section4";
 class HomePage  extends Component  {
     constructor (props) {
         super(props)
@@ -42,7 +45,9 @@ class HomePage  extends Component  {
           </button>
         </form>
     </div>
-    {/* <ServiceCard/> */}
+    <ServicesSection/>
+    <ThirdSection/>
+    <Section4/>
     </div>
   );
 }}

@@ -5,10 +5,10 @@ import "./CardStyle.css";
 // import {getCategories} from './Redux/Actions/categories_action'
 
 function ServiceCard(props) {
-    var renderCards = props.card;
+    
   return (
     <div className="cards">
-      {renderCards.map((el) => (
+      {props.card.map((el) => (
         <Card className="text-white cards" style={{ width: "450px" }}>
           <Card.Img src={el.src} alt="Card image" />
           <Card.ImgOverlay>

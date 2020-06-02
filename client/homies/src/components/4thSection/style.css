@@ -1,0 +1,35 @@
+.sec-section {
+    display: flex;
+    justify-content: center;
+    justify-content: space-between;
+    margin: 100px;  
+}
+.part {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+.Title {
+    color: #555;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin-top: 15px;
+
+}
+.Text {
+    display: flex;
+    align-items: center;
+    width: 300px;
+    color: rgb(155, 152, 152);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin-left: 20px;
+    
+}
+ .image{
+    height: 150px;
+    border-style: solid;
+     border-radius: 100px;
+     border-color: #fffd47;
+     border-width: 2px;
+    box-shadow: 1px 1px 2px #2c3792; 
+}
