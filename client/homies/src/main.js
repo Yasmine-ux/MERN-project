@@ -25,6 +25,8 @@ import { connect } from "react-redux";
 import {
   getServices,
 } from "./actions/service_actions";
+import ServiceCard from "./components/AddServices/ServiceCard";
+import getUsers from "./components/getUsers/getUsers";
 // Check for token to keep user logged in
 if (localStorage.jwtToken) {
   // Set auth token header auth
@@ -67,12 +69,14 @@ class Main extends Component {
             <Route exact path="/plumbingpainting" component={PlumServices}/>
             <Route exact path="/homehelp" component={HomeHelp}/>
             <Route exact path='/service-list' component={AddPage}/>
+            <Route exact path='/les-services' component={ServiceCard}/>
+            <Route exact path='/getuser' component={getUsers}/>
              
             <Switch>
               <PrivateRoute exact path="/dashboard" component={Dashboard} />
               <PrivateRoute exact path='/userpage' component={UserPage}/>
             </Switch>
-            <Footer/>
+            {/* <Footer/> */}
           </div>
     );
   }

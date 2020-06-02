@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-export default function ServiceCard(props) {
+export default function ServiceCards(props) {
   return (
     <div
       style={{
@@ -11,10 +11,10 @@ export default function ServiceCard(props) {
         alignItems: "center",
       }}
     >
-      <p>{props.service.title}</p>
-      <p>{props.service.description}</p>
-      <p>{props.service.service_Provider}</p>
-      <p>{props.service.phone_number}</p>
+      <p>{props.servicee}</p>
+      {/* <p>{props.servicee.description}</p>
+      <p>{props.servicee.service_Provider}</p>
+      <p>{props.servicee.phone_number}</p> */}
       <Link to="/edit-service">
         {" "}
         <button onClick={() => props.getSer(props.service)}> Edit</button>{" "}

@@ -7,9 +7,10 @@ import {
   deleteService,
   putService,
 } from "../../actions/service_actions";
-import ServiceCard from "../AddServices/ServiceCard";
+import ServiceCards from "../AddServices/ServiceCard";
 import AddService from "../AddServices/AddService";
 import Loading from "./new";
+import './tyle.css'
 
 class AddPage extends Component {
   state = {
@@ -19,7 +20,7 @@ class AddPage extends Component {
     phone_number: "",
     edit: false,
     id: "",
-    loading:true
+    loading: true,
   };
 
   getSer = (service) => {
@@ -46,7 +47,7 @@ class AddPage extends Component {
     this.props.getServices();
     setTimeout(() => {
       this.setState({ loading: false });
-    },3000);
+    }, 3000);
   };
   reset = () => {
     this.setState({
@@ -63,12 +64,11 @@ class AddPage extends Component {
     this.reset();
     this.props.putService(this.state.id, this.state);
   };
-  render() 
-  
-  {
+  render() {
     if (this.state.loading) {
       // window.location.reload(true);
-      return <Loading loading={true} />;}
+      return <Loading loading={true} />;
+    }
     return (
       // <BrowserRouter>
       <div>
@@ -83,22 +83,24 @@ class AddPage extends Component {
             </Link>
           </center>
         </div>
-        <Route
-          path="/service-list"
-          render={() => (
-            <div>
-              {this.props.service.map((service) => (
-                <div key={service._id}>
-                  <ServiceCard
-                    service={service}
-                    delete={this.props.deleteService}
-                    getSer={this.getSer}
-                  />
-                </div>
-              ))}
-            </div>
-          )}
-        />
+        <Link to='/les-services'>
+        <button className='get-btn'
+          onClick={() => {
+            this.props.getServices();
+            this.props.services.services.services.map((service) => ( 
+              <div key={service._id}> 
+                <ServiceCards
+                  servicee={service}
+                  delete={this.props.deleteService}
+                  getSer={this.getSer}
+                />
+              </div>
+            ));
+          }}
+        >
+          getService
+        </button></Link>
+
         <Route
           path="/(add-service|edit-service)"
           render={() => (
@@ -108,14 +110,15 @@ class AddPage extends Component {
               handleAction={this.state.edit ? this.putSer : this.addSer}
             />
           )}
-        /></div>
+        />
+      </div>
       // </BrowserRouter>
     );
   }
 }
 
-const mapStateToProps = state => ({
-  service: state.services.services
+const mapStateToProps = (state) => ({
+  services: state.services,
 });
 export default connect(mapStateToProps, {
   getServices,
