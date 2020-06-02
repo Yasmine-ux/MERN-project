@@ -10,6 +10,19 @@ const validateLoginInput = require("../../validation/login");
 // Load User model
 const User = require("../../models/User");
 
+
+//getUser 
+router.get("/", (req, res) => {
+  User.find()
+    .then((data) => res.json({ clients: data }))
+    .catch((err) =>
+      res.json({
+        error: { code: -1, message: "failed to connect/access to database" },
+      })
+    );
+});
+
+
 // @route POST api/users/register
 // @desc Register user
 // @access Public
