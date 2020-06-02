@@ -66,9 +66,7 @@ class Main extends Component {
             <Route exact path='/healthbeauty' component={HealthBeauty}/>
             <Route exact path="/plumbingpainting" component={PlumServices}/>
             <Route exact path="/homehelp" component={HomeHelp}/>
-            <Route exact path='/service-list' 
-            render = {(props)=> <AddPage props={this.state.tab} {...props}/>}
-            />
+            <Route exact path='/service-list' component={AddPage}/>
              
             <Switch>
               <PrivateRoute exact path="/dashboard" component={Dashboard} />
@@ -79,7 +77,6 @@ class Main extends Component {
     );
   }
 }
-// export default App;
 export default connect(null, {
   getServices,
  

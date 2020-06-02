@@ -12,19 +12,15 @@ import AddService from "../AddServices/AddService";
 import Loading from "./new";
 
 class AddPage extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      title: "",
-      description: "",
-      service_Provider: "",
-      phone_number: "",
-      edit: false,
-      id: "",
-      loading:true
-    };
-  }
-  
+  state = {
+    title: "",
+    description: "",
+    service_Provider: "",
+    phone_number: "",
+    edit: false,
+    id: "",
+    loading:true
+  };
 
   getSer = (service) => {
     this.setState({
@@ -76,8 +72,7 @@ class AddPage extends Component {
     return (
       // <BrowserRouter>
       <div>
-        {this.props.props.map(el=><div>{el.title}</div>)
-                /* <div>
+        <div>
           <center>
             <Link to="/service-list">
               {" "}
@@ -113,9 +108,8 @@ class AddPage extends Component {
               handleAction={this.state.edit ? this.putSer : this.addSer}
             />
           )}
-        /> */}
-      {/* // </BrowserRouter> */}
-      </div>
+        /></div>
+      // </BrowserRouter>
     );
   }
 }
