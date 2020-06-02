@@ -16,7 +16,7 @@ return (
             <h4>
               <b>Hey there,</b> {user.name.split(" ")[0]}
               <p className="flow-text grey-text text-darken-1">
-                You are logged into the Dashboard's{" "}
+                You are logged into the Dashboard's{" "} 
                 <span style={{ fontFamily: "monospace" }}>App</span> 👏
               </p>
             </h4>

@@ -39,6 +39,17 @@ class Landing extends Component {
               >
                 Log In
               </Link>
+              <Link
+                to="/loginadmin"
+                style={{
+                  width: "140px",
+                  borderRadius: "3px",
+                  letterSpacing: "1.5px"
+                }}
+                className="btn btn-large btn-flat waves-effect white black-text"
+              >
+                Admin
+              </Link>
             </div>
           </div>
         </div>

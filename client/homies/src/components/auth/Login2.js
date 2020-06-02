@@ -7,7 +7,7 @@ import classnames from "classnames";
 import jwt_decode from 'jwt-decode'
 
 
-class Login extends Component {
+class Login2 extends Component {
   constructor() {
     super();
     this.state = {
@@ -19,7 +19,7 @@ class Login extends Component {
   
 componentWillReceiveProps(nextProps) {
   
-    if (nextProps.auth.isAuthenticated) {this.props.history.push("/userpage");} // push user to dashboard when they login
+    if (nextProps.auth.isAuthenticated) {this.props.history.push("/dashboard");} // push user to dashboard when they login
       
     
 if (nextProps.errors) {
@@ -122,7 +122,7 @@ return (
     );
   }
 }
-Login.propTypes = {
+Login2.propTypes = {
   loginUser: PropTypes.func.isRequired,
   auth: PropTypes.object.isRequired,
   errors: PropTypes.object.isRequired
@@ -134,4 +134,4 @@ const mapStateToProps = state => ({
 export default connect(
   mapStateToProps,
   { loginUser }
-)(withRouter(Login));
+)(withRouter(Login2));
